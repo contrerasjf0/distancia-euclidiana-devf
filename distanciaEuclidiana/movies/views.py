@@ -7,7 +7,7 @@ import os
 
 from calculationEuclidiana.views import CalculationEuclidiano
 
-PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '../..'))
+PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 
 def movies(self):
     point_search = {'coordinate_X': 1, 'coordinate_Y': 1}
