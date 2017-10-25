@@ -36,3 +36,26 @@ def get_distances(point_search):
 def print_dict(d):
     for k, v in d.items():
         print("{}: {}".format(k, v))
+
+#Get k number of nearest distances
+def get_nearest_distances(all_distances, k):
+    nearest_distances = dict()
+    sorted_keys_by_distance = sorted(all_distances, key=lambda x: (all_distances[x]['distance']))
+    for i in range(0, k):
+        nkey = sorted_keys_by_distance[i]
+        nearest_distances[nkey] = all_distances[nkey]  
+    return nearest_distances
+
+#Get most repeated result
+def get_new_resultado(nearest_distances):
+    count_zeros = 0;
+    count_ones = 0;
+    for k, v in nearest_distances.items():
+        if v['resultado'] == 0:
+            count_zeros += 1
+        elif v['resultado'] == 1:
+            count_ones += 1
+    if count_zeros>count_ones:
+        return 0
+    else:
+        return 1;
